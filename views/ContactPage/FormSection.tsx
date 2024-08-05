@@ -53,26 +53,26 @@ export default function FormSection() {
         {hasErrored && <ErrorMessage>Couldn&apos;t send email. Please try again.</ErrorMessage>}
         <InputGroup>
           <InputStack>
-            {errors.name && <ErrorMessage>Name is required</ErrorMessage>}
-            <Input placeholder="Your Name" id="name" disabled={isDisabled} {...register('name', { required: true })} />
+            {errors.name && <ErrorMessage>İsim zorunludur</ErrorMessage>}
+            <Input placeholder="Adınız-Soyadınız" id="name" disabled={isDisabled} {...register('name', { required: true })} />
           </InputStack>
           <InputStack>
-            {errors.email && <ErrorMessage>Email is required</ErrorMessage>}
-            <Input placeholder="Your Email" id="email" disabled={isDisabled} {...register('email', { required: true })} />
+            {errors.email && <ErrorMessage>Email zorunludur</ErrorMessage>}
+            <Input placeholder="Email Ardresiniz" id="email" disabled={isDisabled} {...register('email', { required: true })} />
           </InputStack>
         </InputGroup>
         <InputStack>
-          {errors.description && <ErrorMessage>Description is required</ErrorMessage>}
+          {errors.description && <ErrorMessage>Açıklama zorunludur</ErrorMessage>}
           <Textarea
             as="textarea"
-            placeholder="Enter Your Message..."
+            placeholder="Mesajnızı Giriniz..."
             id="description"
             disabled={isDisabled}
             {...register('description', { required: true })}
           />
         </InputStack>
         <Button as="button" type="submit" disabled={isSubmitDisabled}>
-          Send Message
+          Kaydet
         </Button>
       </Form>
     </Wrapper>

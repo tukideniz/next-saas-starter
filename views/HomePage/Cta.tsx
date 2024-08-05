@@ -19,7 +19,7 @@ export default function Cta() {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda beatae accusamus deleniti nihil quas tempora numquam, vitae
             culpa.
           </Description>
-          <ButtonGroup>
+         <ButtonGroup>
             <NextLink href="#early-access" passHref>
               <Button>
                 Subscribe to the newsletter <span>&rarr;</span>
@@ -30,7 +30,7 @@ export default function Cta() {
                 Features <span>&rarr;</span>
               </OutlinedButton>
             </NextLink>
-          </ButtonGroup>
+          </ButtonGroup> 
         </Stack>
       </Container>
     </CtaWrapper>
