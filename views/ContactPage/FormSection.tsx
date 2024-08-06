@@ -58,21 +58,21 @@ export default function FormSection() {
           </InputStack>
           <InputStack>
             {errors.email && <ErrorMessage>Email zorunludur</ErrorMessage>}
-            <Input placeholder="Email Ardresiniz" id="email" disabled={isDisabled} {...register('email', { required: true })} />
+            <Input placeholder="Email Adresiniz" id="email" disabled={isDisabled} {...register('email', { required: true })} />
           </InputStack>
         </InputGroup>
         <InputStack>
           {errors.description && <ErrorMessage>Açıklama zorunludur</ErrorMessage>}
           <Textarea
             as="textarea"
-            placeholder="Mesajnızı Giriniz..."
+            placeholder="Mesajınızı Giriniz..."
             id="description"
             disabled={isDisabled}
             {...register('description', { required: true })}
           />
         </InputStack>
         <Button as="button" type="submit" disabled={isSubmitDisabled}>
-          Kaydet
+          Gönder
         </Button>
       </Form>
     </Wrapper>
@@ -80,33 +80,31 @@ export default function FormSection() {
 }
 
 const Wrapper = styled.div`
-  flex: 2;
+  flex: 1;
+  padding: 1rem;
+  box-sizing: border-box;
+  background-color: #f9f9f9;
+
+  @media (max-width: 768px) {
+    padding: 0;
+  }
 `;
 
 const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+
   & > * {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
 `;
 
 const InputGroup = styled.div`
   display: flex;
-  align-items: center;
-
-  & > *:first-child {
-    margin-right: 2rem;
-  }
-
-  & > * {
-    flex: 1;
-  }
+  gap: 1rem;
 
   ${media('<=tablet')} {
     flex-direction: column;
-    & > *:first-child {
-      margin-right: 0rem;
-      margin-bottom: 2rem;
-    }
   }
 `;
 
@@ -126,5 +124,5 @@ const ErrorMessage = styled.p`
 
 const Textarea = styled(Input)`
   width: 100%;
-  min-height: 20rem;
+  min-height: 30rem;
 `;

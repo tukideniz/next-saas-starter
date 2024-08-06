@@ -20,10 +20,13 @@ import { NewsletterModalContextProvider, useNewsletterModalContext } from 'conte
 import { NavItems } from 'types';
 
 const navItems: NavItems = [
-  { title: 'Awesome SaaS Features', href: '/features' },
-  { title: 'Pricing', href: '/pricing' },
-  { title: 'Contact', href: '/contact' },
-  { title: 'Sign up', href: '/sign-up', outlined: true },
+  { title: 'ANASAYFA', href: '/anasayfa' },
+  { title: 'FUNA', href: '/funa' },
+  { title: 'BLOG', href: '/blog' },
+  { title: 'BİZ KİMİZ', href: '/bizkimiz' },
+
+  { title: 'İLETİŞİM', href: '/contact' },
+ 
 ];
 
 const TinaCMS = dynamic(() => import('tinacms'), { ssr: false });

@@ -1,81 +1,57 @@
 import NextLink from 'next/link';
-import { FacebookIcon, LinkedinIcon, TwitterIcon } from 'react-share';
+import { FacebookIcon, InstapaperIcon, LinkedinIcon, TwitterIcon, WhatsappIcon } from 'react-share';
 import styled from 'styled-components';
 import Container from 'components/Container';
 import { media } from 'utils/media';
+import ImageIG from 'public/instagramlogo.png';
+
+
+const InstagramIcon: React.FC<React.ImgHTMLAttributes<HTMLImageElement>> = (props) => {
+  return <Image src={Image} alt="Instagram" {...props} />;
+};
+
 
 type SingleFooterListItem = { title: string; href: string };
 type FooterListItems = SingleFooterListItem[];
 type SingleFooterList = { title: string; items: FooterListItems };
-type FooterItems = SingleFooterList[];
 
-const footerItems: FooterItems = [
-  {
-    title: 'Company',
-    items: [
-      { title: 'Privacy Policy', href: '/privacy-policy' },
-      { title: 'Cookies Policy', href: '/cookies-policy' },
-    ],
-  },
-  {
-    title: 'Product',
-    items: [
-      { title: 'Features', href: '/features' },
-      { title: 'Something', href: '/something' },
-      { title: 'Something else', href: '/something-else' },
-      { title: 'And something else', href: '/and-something-else' },
-    ],
-  },
-  {
-    title: 'Knowledge',
-    items: [
-      { title: 'Blog', href: '/blog' },
-      { title: 'Contact', href: '/contact' },
-      { title: 'FAQ', href: '/faq' },
-      { title: 'Help Center', href: '/help-center' },
-    ],
-  },
-  {
-    title: 'Something',
-    items: [
-      { title: 'Features2', href: '/features2' },
-      { title: 'Something2', href: '/something2' },
-      { title: 'Something else2', href: '/something-else2' },
-      { title: 'And something else2', href: '/and-something-else2' },
-    ],
-  },
-];
+
+
+
+
+
 
 export default function Footer() {
   return (
     <FooterWrapper>
       <Container>
-        <ListContainer>
-          {footerItems.map((singleItem) => (
-            <FooterList key={singleItem.title} {...singleItem} />
-          ))}
-        </ListContainer>
+        
         <BottomBar>
           <ShareBar>
-            <NextLink href="https://www.twitter.com/my-saas-startup" passHref>
+            <NextLink href="" passHref>
               <a>
-                <TwitterIcon size={50} round={true} />
+                <WhatsappIcon size={50} round={true} />
+              </a>
+            </NextLink>
+            <NextLink href="" passHref>
+            <a>
+                <Image />
               </a>
             </NextLink>
 
-            <NextLink href="https://www.facebook.com/my-saas-startup" passHref>
+            <NextLink href="https://www.facebook.com/profile.php?id=61556311643168" passHref>
               <a>
                 <FacebookIcon size={50} round={true} />
               </a>
             </NextLink>
 
-            <NextLink href="https://www.linkedin.com/my-saas-startup" passHref>
+            <NextLink href="" passHref>
               <a>
                 <LinkedinIcon size={50} round={true} />
               </a>
             </NextLink>
           </ShareBar>
-          <Copyright>&copy; Copyright 2021 My Saas Startup</Copyright>
+          <Copyright>&copy; Copyright © 2024- FunaTek   All rights reserved.</Copyright>
         </BottomBar>
       </Container>
     </FooterWrapper>
@@ -102,6 +78,15 @@ function ListItem({ title, href }: SingleFooterListItem) {
     </ListItemWrapper>
   );
 }
+
+
+// StyledImage bileşeni
+const Image = styled.img`
+  width: 50px;  // WhatsApp ikonu ile aynı boyut
+  height: 50px; // WhatsApp ikonu ile aynı boyut
+  border-radius: 50%; // Yuvarlak görünüm
+`
+
 
 const FooterWrapper = styled.div`
   padding-top: 10rem;
@@ -143,6 +128,7 @@ const ListWrapper = styled.div`
     margin-right: 0rem;
   }
 `;
+
 
 const ListItemWrapper = styled.p`
   font-size: 1.6rem;

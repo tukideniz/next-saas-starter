@@ -9,11 +9,7 @@ import { NonNullableChildrenDeep } from 'types';
 import { formatDate } from 'utils/formatDate';
 import { media } from 'utils/media';
 import { getReadTime } from 'utils/readTime';
-import Header from 'views/SingleArticlePage/Header';
-import MetadataHead from 'views/SingleArticlePage/MetadataHead';
-import OpenGraphHead from 'views/SingleArticlePage/OpenGraphHead';
-import ShareWidget from 'views/SingleArticlePage/ShareWidget';
-import StructuredDataHead from 'views/SingleArticlePage/StructuredDataHead';
+
 import { Posts, PostsDocument, Query } from '.tina/__generated__/types';
 
 export default function SingleArticlePage(props: InferGetStaticPropsType<typeof getStaticProps>) {
