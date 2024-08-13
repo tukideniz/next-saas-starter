@@ -1,57 +1,46 @@
 import NextLink from 'next/link';
-import { FacebookIcon, InstapaperIcon, LinkedinIcon, TwitterIcon, WhatsappIcon } from 'react-share';
 import styled from 'styled-components';
 import Container from 'components/Container';
 import { media } from 'utils/media';
-import ImageIG from 'public/instagramlogo.png';
-
-
-const InstagramIcon: React.FC<React.ImgHTMLAttributes<HTMLImageElement>> = (props) => {
-  return <Image src={Image} alt="Instagram" {...props} />;
-};
 
 
 type SingleFooterListItem = { title: string; href: string };
 type FooterListItems = SingleFooterListItem[];
 type SingleFooterList = { title: string; items: FooterListItems };
 
-
-
-
-
-
-
 export default function Footer() {
   return (
     <FooterWrapper>
+      
       <Container>
-        
+      <p>Sosyal Medya Hesaplarımızı Takip Etmeyi Unutmayın!</p>
         <BottomBar>
+        
           <ShareBar>
+          
             <NextLink href="" passHref>
               <a>
-                <WhatsappIcon size={50} round={true} />
+                <Icon src="/whatsapp.png" alt="WhatsApp" />
               </a>
             </NextLink>
-            <NextLink href="" passHref>
-            <a>
-                <Image />
-              </a>
-            </NextLink>
-
             <NextLink href="https://www.facebook.com/profile.php?id=61556311643168" passHref>
               <a>
-                <FacebookIcon size={50} round={true} />
+                <Icon src="/facebook.png" alt="Facebook" /> 
               </a>
             </NextLink>
-
-            <NextLink href="" passHref>
+           
+            <NextLink href="https://www.instagram.com/funayazilim/" passHref>
               <a>
-                <LinkedinIcon size={50} round={true} />
+                <Icon src="/instagram.png" alt="Instagram" />
+              </a>
+            </NextLink>
+            <NextLink href="https://www.youtube.com/@FunaYazlmReklam" passHref>
+              <a>
+                <Icon src="/youtube.png" alt="YouTube" />
               </a>
             </NextLink>
           </ShareBar>
-          <Copyright>&copy; Copyright © 2024- FunaTek   All rights reserved.</Copyright>
+          <Copyright>&copy; Copyright 2024 - FunaTek All rights reserved.</Copyright>
         </BottomBar>
       </Container>
     </FooterWrapper>
@@ -79,27 +68,11 @@ function ListItem({ title, href }: SingleFooterListItem) {
   );
 }
 
-
-// StyledImage bileşeni
-const Image = styled.img`
-  width: 50px;  // WhatsApp ikonu ile aynı boyut
-  height: 50px; // WhatsApp ikonu ile aynı boyut
-  border-radius: 50%; // Yuvarlak görünüm
-`
-
-
 const FooterWrapper = styled.div`
-  padding-top: 10rem;
+  padding-top: 1rem;
   padding-bottom: 4rem;
   background: rgb(var(--secondary));
   color: rgb(var(--textSecondary));
-`;
-
-const ListContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
 `;
 
 const ListHeader = styled.p`
@@ -129,7 +102,6 @@ const ListWrapper = styled.div`
   }
 `;
 
-
 const ListItemWrapper = styled.p`
   font-size: 1.6rem;
 
@@ -140,18 +112,31 @@ const ListItemWrapper = styled.p`
 `;
 
 const ShareBar = styled.div`
+  display: flex;
+  gap: 1rem;
+
   & > *:not(:first-child) {
     margin-left: 1rem;
   }
 `;
 
+const Icon = styled.img`
+  width: 50px;
+  height: 50px;
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+`;
+
 const Copyright = styled.p`
   font-size: 1.5rem;
-  margin-top: 0.5rem;
+  margin-top: 3em;
 `;
 
 const BottomBar = styled.div`
-  margin-top: 6rem;
+  margin-top: -8rem;
   display: flex;
   justify-content: space-between;
   align-items: center;

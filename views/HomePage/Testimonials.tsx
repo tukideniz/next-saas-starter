@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import Container from 'components/Container';
 import Separator from 'components/Separator';
 import { media } from 'utils/media';
-import OverTitle from 'components/OverTitle';
+
 import SectionTitle from 'components/SectionTitle';
 
 const TESTIMONIALS = [
@@ -119,7 +119,7 @@ const Content = styled.blockquote`
   text-align: center;
   font-size: 2.2rem;
   font-weight: bold;
-  font-style: italic;
+ 
   max-width: 60%;
 
   ${media('<=desktop')} {

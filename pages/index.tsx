@@ -2,7 +2,6 @@ import { InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
 import styled from 'styled-components';
 import BasicSection from 'components/BasicSection';
-import Link from 'components/Link';
 import { EnvVars } from 'env';
 import { getAllPosts } from 'utils/postsFetcher';
 import Cta from 'views/HomePage/Blog';
@@ -14,6 +13,7 @@ import ScrollableBlogPosts from 'views/HomePage/ScrollableBlogPosts';
 import Testimonials from 'views/HomePage/Testimonials';
 import gif from 'public/arkaplangifdenem.gif'
 import Image from 'next/image';
+//import Map from 'views/HomePage/Map'
 
 
 export default function Homepage({ posts }: InferGetStaticPropsType<typeof getStaticProps>) {
@@ -58,7 +58,9 @@ BURAYA YAZILAR YAZILACAK            </p>
           <FeaturesGallery />
           <Features />
           <Testimonials />
+          
           <ScrollableBlogPosts posts={posts} />
+          
         </DarkerBackgroundContainer>
       </HomepageWrapper>
     </>

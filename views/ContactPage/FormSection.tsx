@@ -8,7 +8,9 @@ import MailSentState from '../../components/MailSentState';
 
 interface EmailPayload {
   name: string;
-  email: string;
+  email?: string;
+  phone: string;
+  company: string;
   description: string;
 }
 
@@ -50,7 +52,7 @@ export default function FormSection() {
   return (
     <Wrapper>
       <Form onSubmit={handleSubmit(onSubmit)}>
-        {hasErrored && <ErrorMessage>Couldn&apos;t send email. Please try again.</ErrorMessage>}
+        {hasErrored && <ErrorMessage>Mail gönderilemedi. Lütfen tekrar deneyiniz.</ErrorMessage>}
         <InputGroup>
           <InputStack>
             {errors.name && <ErrorMessage>İsim zorunludur</ErrorMessage>}
@@ -58,7 +60,15 @@ export default function FormSection() {
           </InputStack>
           <InputStack>
             {errors.email && <ErrorMessage>Email zorunludur</ErrorMessage>}
-            <Input placeholder="Email Adresiniz" id="email" disabled={isDisabled} {...register('email', { required: true })} />
+            <Input placeholder="Email Adresiniz" id="email" disabled={isDisabled} {...register('email')} />
+          </InputStack>
+          <InputStack>
+            {errors.phone && <ErrorMessage>Telefon numarası zorunludur</ErrorMessage>}
+            <Input placeholder="Telefon Numaranız" id="phone" disabled={isDisabled} {...register('phone', { required: true })} />
+          </InputStack>
+          <InputStack>
+            {errors.company && <ErrorMessage>Şirket adı zorunludur</ErrorMessage>}
+            <Input placeholder="Şirket Adınız" id="company" disabled={isDisabled} {...register('company', { required: true })} />
           </InputStack>
         </InputGroup>
         <InputStack>
@@ -100,7 +110,8 @@ const Form = styled.form`
 `;
 
 const InputGroup = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1rem;
 
   ${media('<=tablet')} {
@@ -124,5 +135,5 @@ const ErrorMessage = styled.p`
 
 const Textarea = styled(Input)`
   width: 100%;
-  min-height: 30rem;
+  min-height: 20rem;
 `;

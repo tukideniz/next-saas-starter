@@ -1,7 +1,21 @@
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import funaHeaderSiyah from 'public/funaheadersiyah.png';
+
 export default function Logo({ ...rest }) {
   return (
-    <svg id="logo-34" width="155" height="40" viewBox="0 0 155 40" fill="none" xmlns="http://www.w3.org/2000/svg" {...rest}>
-     
-    </svg>
+    <Link href="/">
+      <a>
+        <Image
+          src={funaHeaderSiyah}
+          id="logoheader"
+          width={210}
+          height={60}
+          alt="Logo"
+          {...rest}
+        />
+      </a>
+    </Link>
   );
 }
